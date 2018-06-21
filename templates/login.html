@@ -1,21 +1,26 @@
 {% extends 'base_accounts.html' %}
-{% block title %}Sign up{% endblock title %}
+{% block title %}Log in{% endblock title %}
 
 {% block content %}
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="card">
         <div class="card-body">
-          <h3 class="card-title">Sign up</h3>
+          <h3 class="card-title">Log in</h3>
           <form method="POST" novalidate>
             {% csrf_token %}
             {% include 'includes/form.html' %}
-            <button type="submit" class="btn btn-primary btn-block">Create an account</button>
+            <button type="submit" class="btn btn-primary btn-block">Log in</button>
           </form>
         </div>
         <div class="card-footer text-muted text-center">
-          Already have an account ? <a href="{% url 'login' %}">Log in</a>
+          New to XYZ Forum Board ? <a href="{% url 'signup' %}">Sign up</a>
         </div>
+      </div>
+      <div class="text-center py-2">
+        <small>
+          <a href="#" class="text-muted">Forgot your password ?</a>
+        </small>
       </div>
     </div>
   </div>

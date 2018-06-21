@@ -26,5 +26,6 @@ urlpatterns = [
     url(r'^boards/(?P<pk>\d+)/new/$', boards_views.new_topic, name='new_topic'),
     url(r'^signup/$', accounts_views.signup, name='signup'),
     url(r'^logout/$', auth_views.LogoutView.as_view(), name='logout'),
+    url(r'^login/$', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     url(r'^admin/', admin.site.urls),
 ]

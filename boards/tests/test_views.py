@@ -2,9 +2,9 @@ from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.test import TestCase
 from django.urls import resolve
-from .views import home, board_topics, new_topic
-from .models import Board, Topic, Post
-from .forms import NewTopicForm
+from ..views import home, board_topics, new_topic
+from ..models import Board, Topic, Post
+from ..forms import NewTopicForm
 
 
 class HomeTests(TestCase):
@@ -63,7 +63,7 @@ class BoardTopicsTests(TestCase):
 class NewTopicTests(TestCase):
     def setUp(self):
         Board.objects.create(name='Django', description='Django board.')
-        User.objects.create_user(username='nanon', email='nanon@example.com', password='123456')
+        User.objects.create_user(username='nanon', email='nanon@example.com', password='example567')
     
     def test_new_topic_view_success_status_code(self):
         url = reverse('new_topic', kwargs={'pk':1})
